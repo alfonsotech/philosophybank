@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/belinda/.node/bin/node',
+1 verbose cli   '/Users/belinda/.node/bin/npm',
+1 verbose cli   'owner',
+1 verbose cli   'ls',
+1 verbose cli   'public-philosophy-platform' ]
+2 info using npm@3.10.8
+3 info using node@v6.8.1
+4 silly mapToRegistry name public-philosophy-platform
+5 silly mapToRegistry using default registry
+6 silly mapToRegistry registry https://registry.npmjs.org/
+7 silly mapToRegistry data Result {
+7 silly mapToRegistry   raw: 'public-philosophy-platform',
+7 silly mapToRegistry   scope: null,
+7 silly mapToRegistry   escapedName: 'public-philosophy-platform',
+7 silly mapToRegistry   name: 'public-philosophy-platform',
+7 silly mapToRegistry   rawSpec: '',
+7 silly mapToRegistry   spec: 'latest',
+7 silly mapToRegistry   type: 'tag' }
+8 silly mapToRegistry uri https://registry.npmjs.org/public-philosophy-platform
+9 verbose request uri https://registry.npmjs.org/public-philosophy-platform
+10 verbose request no auth needed
+11 info attempt registry request try #1 at 2:38:25 PM
+12 verbose request id 929749297d005d8e
+13 http request GET https://registry.npmjs.org/public-philosophy-platform
+14 http 404 https://registry.npmjs.org/public-philosophy-platform
+15 verbose headers { date: 'Tue, 11 Dec 2018 18:38:26 GMT',
+15 verbose headers   'content-type': 'application/json',
+15 verbose headers   'content-length': '21',
+15 verbose headers   connection: 'keep-alive',
+15 verbose headers   'set-cookie': [ '__cfduid=da8c4364156aa7c6093507d367ba617f91544553505; expires=Wed, 11-Dec-19 18:38:25 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+15 verbose headers   'cf-cache-status': 'MISS',
+15 verbose headers   'cache-control': 'max-age=300',
+15 verbose headers   'cf-ray': '487a11726d7d5296-MIA',
+15 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+15 verbose headers   vary: 'accept-encoding, accept',
+15 verbose headers   server: 'cloudflare' }
+16 silly get cb [ 404,
+16 silly get   { date: 'Tue, 11 Dec 2018 18:38:26 GMT',
+16 silly get     'content-type': 'application/json',
+16 silly get     'content-length': '21',
+16 silly get     connection: 'keep-alive',
+16 silly get     'set-cookie': [ '__cfduid=da8c4364156aa7c6093507d367ba617f91544553505; expires=Wed, 11-Dec-19 18:38:25 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+16 silly get     'cf-cache-status': 'MISS',
+16 silly get     'cache-control': 'max-age=300',
+16 silly get     'cf-ray': '487a11726d7d5296-MIA',
+16 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+16 silly get     vary: 'accept-encoding, accept',
+16 silly get     server: 'cloudflare' } ]
+17 error owner ls Couldn't get owner data public-philosophy-platform
+18 verbose stack Error: Not found : public-philosophy-platform
+18 verbose stack     at makeError (/Users/belinda/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+18 verbose stack     at CachingRegistryClient.<anonymous> (/Users/belinda/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+18 verbose stack     at Request._callback (/Users/belinda/.node/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+18 verbose stack     at Request.self.callback (/Users/belinda/.node/lib/node_modules/npm/node_modules/request/request.js:187:22)
+18 verbose stack     at emitTwo (events.js:106:13)
+18 verbose stack     at Request.emit (events.js:191:7)
+18 verbose stack     at Request.<anonymous> (/Users/belinda/.node/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+18 verbose stack     at emitOne (events.js:96:13)
+18 verbose stack     at Request.emit (events.js:188:7)
+18 verbose stack     at IncomingMessage.<anonymous> (/Users/belinda/.node/lib/node_modules/npm/node_modules/request/request.js:965:12)
+19 verbose statusCode 404
+20 verbose pkgid public-philosophy-platform
+21 verbose cwd /Users/belinda/projects/preview-link-test/client
+22 error Darwin 14.5.0
+23 error argv "/Users/belinda/.node/bin/node" "/Users/belinda/.node/bin/npm" "owner" "ls" "public-philosophy-platform"
+24 error node v6.8.1
+25 error npm  v3.10.8
+26 error code E404
+27 error 404 Not found : public-philosophy-platform
+28 error 404
+29 error 404 'public-philosophy-platform' is not in the npm registry.
+30 error 404 You should bug the author to publish it (or use the name yourself!)
+31 error 404 Note that you can also install from a
+32 error 404 tarball, folder, http url, or git url.
+33 verbose exit [ 1, true ]
