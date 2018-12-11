@@ -1,7 +1,6 @@
 import React from 'react';
 import { compose } from 'recompose';
-
-import './App.css';
+import './Resources.css';
 
 const applyUpdateResult = (result) => (prevState) => ({
   hits: [...prevState.hits, ...result.hits],
@@ -22,10 +21,10 @@ const applySetError = (prevState) => ({
   isLoading: false,
 });
 
-const getHackerNewsUrl = (value, page) =>
-  `https://hn.algolia.com/api/v1/search?query=${value}&page=${page}&hitsPerPage=100`;
+// const getHackerNewsUrl = (value, page) =>
+//   `https://hn.algolia.com/api/v1/search?query=${value}&page=${page}&hitsPerPage=100`;
 
-class App extends React.Component {
+class Resources extends React.Component {
   constructor(props) {
     super(props);
 
@@ -54,8 +53,11 @@ class App extends React.Component {
 
   fetchStories = (value, page) => {
     this.setState({ isLoading: true });
-    fetch(getHackerNewsUrl(value, page))
-      .then(response => response.json())
+    fetch("/api/resources")
+      .then(response => {
+        console.log('response.json()', response.json());
+        response.json();
+      })
       .then(result => this.onSetResult(result, page))
       .catch(this.onSetError);
   }
@@ -164,4 +166,4 @@ const AdvancedList = compose(
   withLoading(loadingCondition),
 )(List);
 
-export default App;
+export default Resources;
