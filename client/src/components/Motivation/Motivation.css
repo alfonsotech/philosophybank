@@ -1,0 +1,30 @@
+.Motivation {
+  background-image: url('/john-mark-arnold-42898.jpg');
+  height:400px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+/* .Motivation p {
+  color: white;
+  text-align: center;
+  padding-right:100px;
+} */
+.motivation-left {
+  color: white;
+  text-align: left;
+  padding-right:100px;
+  padding-left:100px;
+}
+.motivation-right {
+  color: white;
+  text-align: right;
+  padding-left:100px;
+  padding-right:100px;
+}

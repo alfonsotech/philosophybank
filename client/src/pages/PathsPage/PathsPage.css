@@ -1,0 +1,65 @@
+.Paths {
+padding: 0 80px;
+}
+
+.page-header {
+  /* background-color: rgba(0,0,0,.1); */
+  border: 3px dashed rgba(0,0,0,.3);
+  border-top-right-radius: 20px;
+  border-style: dashed;
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+
+.page-header>h3 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.header-button {
+border-top-right-radius: 10px;
+margin-top: 0px;
+padding: 5px 10px 5px 10px;
+}
+
+.paths-elements {
+  padding: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.paths-elements>li {
+  width: 100%;
+}
+
+.request-path-button {
+  float: right;
+  margin: 0;
+}
+
+.paths-elements {
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .Paths {
+    padding: 0 20px;
+  }
+  .search-box {
+    font-size: 14px;
+    margin: 20px;
+  }
+  .search-box input {
+    width: 100%;
+  }
+  .form-control, input {
+    border-width: 1px;
+  }
+  .page-header>h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -18,7 +18,7 @@ class Resource extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      _id: '',
+      id: '',
       title: '',
       author:[],
       url: '',
@@ -41,9 +41,9 @@ class Resource extends Component {
   }
 
   componentDidMount = () => {
-    const { resource } = this.props
+    let resource = this.props
     this.setState({
-      _id: resource._id,
+      id: resource.id,
       title: resource.title,
       author:resource.author,
       url: resource.url,
@@ -68,7 +68,7 @@ class Resource extends Component {
   handleUpvote = () => {
     const upvoted = this.state.upvotes + 1
     this.setState({upvotes:upvoted})
-    axios.put("/api/resources/" + this.state._id, {
+    axios.put("/api/resources/" + this.state.id, {
       upvotes: upvoted
     })
     this.props.history.push('/topics')
@@ -77,7 +77,7 @@ class Resource extends Component {
   handleUpViews = () => {
     const viewed = this.state.views + 1
     this.setState({views:viewed})
-    axios.put("/api/resources/" + this.state._id, {
+    axios.put("/api/resources/" + this.state.id, {
       views: viewed
     })
   }
@@ -124,7 +124,7 @@ class Resource extends Component {
   //   event.preventDefault()
   //   const notes = this.state.notes
   //   console.log('this.state.notes', this.state.notes)
-  //   axios.put("/api/resources/note" + this.state._id, {notes: notes})
+  //   axios.put("/api/resources/note" + this.state.id, {notes: notes})
   //   .then( data => {
   //     console.log("New notes submitted: ", data);
   //   })

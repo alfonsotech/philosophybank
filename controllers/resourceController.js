@@ -2,53 +2,65 @@ const db = require("../models")
 
 module.exports = {
   findAll: function(req, res) {
+    var options = {
+      page: parseInt(req.query.page),
+      limit: 10
+    };
     db.Resource
-      .find({})
-      .sort('upvotes')
-      .exec( (err, docs) => {
-        // console.log('docs', docs)
-        res.json(docs)
-      })
+    .paginate({}, options)
+    .then(response => {
+      res.json(response)
+    })
   },
   findTrending: function(req, res){
+    var options = {
+      sort: {
+        upvotes: -1,
+        views: -1,
+        date: -1
+      },
+      page: parseInt(req.query.page),
+      limit: 10
+    };
     db.Resource
-      .find({})
-      .sort({upvotes: -1, views: -1, date: -1})
-      .exec( (err, docs) => {
-        res.json(docs)
-      })
+    .paginate({}, options)
+    .then(response => {
+      res.json(response)
+    })
   },
   findMostViewed: function(req, res){
+    var options = {
+      sort: {
+        views: -1,
+        date: -1
+      },
+      page: parseInt(req.query.page),
+      limit: 10
+    };
     db.Resource
-      .find({})
-      .sort({views: -1, date: -1})
-      .exec( (err, docs) => {
-        res.json(docs)
-      })
+    .paginate({}, options)
+    .then(response => {
+      res.json(response)
+    })
   },
   findNew: function(req, res){
+    var options = {
+      sort: {
+        date: -1,
+        upvotes: -1,
+        views: -1
+      },
+      page: parseInt(req.query.page),
+      limit: 10
+    };
     db.Resource
-      .find({})
-      .sort({date: -1, upvotes: -1, views: -1})
-      .exec( (err, docs) => {
-        res.json(docs)
-      })
-  },
-  findByPath: function(req, res) {
-    db.Resource
-      .find({path: req.params.path})
-      .sort({position: 1})
-      .then(dbByPath => res.json(dbByPath))
-      .catch(err => res.status(422).json(err))
-  },
-  findByLevel: function(req, res) {
-    db.Resource
-      .find({level: req.params.level})
-      .sort({date: -1})
-      .then(dbByPath => res.json(dbByPath))
-      .catch(err => res.status(422).json(err))
+    .paginate({}, options)
+    .then(response => {
+      res.json(response)
+    })
   },
   findById: function(req, res) {
+    console.log('req.params.id', req.params.id);
     db.Resource
       .findById(req.params.id)
       .then(dbResource => res.json(dbResource))

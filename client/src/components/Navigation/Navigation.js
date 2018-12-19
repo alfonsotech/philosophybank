@@ -8,7 +8,7 @@ const Navigation = () => (
   <Navbar collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">Philosophy Resources Online <small>(beta)</small></a>
+        <a href="/">Public Philosophy Platform <small>(beta)</small></a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>
@@ -17,6 +17,15 @@ const Navigation = () => (
         <NavItem eventKey={1} href="/">
           Home
         </NavItem>
+        <NavItem eventKey={2} href="/topics">
+          Topics
+        </NavItem>
+        <NavItem eventKey={3} href="/paths">
+          Paths
+        </NavItem>
+        {/* <NavItem eventKey={2} href="/tribes">
+          Tribes
+        </NavItem> */}
         <NavItem eventKey={4} href="/submit">
           Submit
         </NavItem>

@@ -1,19 +1,36 @@
 import React from "react"
 import FontAwesome from 'react-fontawesome'
 import './Footer.css'
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Footer = () => (
   <footer>
     <div className="footer">
-      <div className="footer-contact">
+      <div className="footer-links">
         <ul>
-          <li><h6>CONTACT</h6></li>
-          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Feature%20Request">Feature Request</a></li>
-          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Report%20Bug">Report Bug</a></li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+          <li>
+            <Link to="/paths">Paths</Link>
+          </li>
+          {/* <li>
+            <Link to="/tribes">Tribes</Link>
+          </li> */}
+          <li>
+            <Link className="submit-button" to="/submit">Submit</Link>
+          </li>
         </ul>
       </div>
       <div className="footer-contact">
+
+        <ul>
+          <li><h6>CONTACT</h6></li>
+          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Feature%20Request">Feature Request</a></li>
+          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=SUggest%20A%20Path">Suggest A Path</a></li>
+          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Report%20Bug">Report Bug</a></li>
+        </ul>
+        <hr />
         <ul>
           <li><h6>SUPPORT</h6></li>
           <li>

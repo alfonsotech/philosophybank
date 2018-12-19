@@ -13,10 +13,6 @@ router.route("/trending")
 router.route("/new")
     .get(resourceController.findNew)
 
-//Get by Path className
-router.route('/:path')
-  .get(resourceController.findByPath)
-
 // Matches with "/api/resources/:id"
 router
   .route("/:id")
