@@ -1,3 +1,4 @@
-.Topics>ol>div>div>div {
-  padding: 40px !important;
+.resources {
+  list-style: none;
+  padding-left: 0;
 }

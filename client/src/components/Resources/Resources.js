@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import Resource from '../Resource'
+import './Resources.css'
 
 class Resources extends Component {
   state = {
     docs: [],
+    history:null,
     total: null,
     limit: 8,
     page: 1,
