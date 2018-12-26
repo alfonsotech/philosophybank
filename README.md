@@ -79,3 +79,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+## References
+[infinite scroll tutorial](https://github.com/react-u/18-infinite-scrolling-using-react/blob/03-implment-infinite-scroll/src/features/contact-list/contact.js)

@@ -14,7 +14,7 @@ class Resources extends Component {
     scrolling: false,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.loadResources()
     this.scrollListener = window.addEventListener('scroll', (e) => {
       this.handleScroll(e)
@@ -26,7 +26,7 @@ class Resources extends Component {
     if (scrolling) return
     if (pages <= page) return
     var lastLi = document.querySelector('ul.resources > li:last-child')
-    console.log('lastLi', lastLi);
+
     var lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
     var pageOffset = window.pageYOffset + window.innerHeight
     var bottomOffset = 20
@@ -38,7 +38,7 @@ class Resources extends Component {
 
   loadResources = () => {
     const { limit, page, docs } = this.state
-    const url = `/api/resources?limit=${limit}&page=${page}`
+    const url = `/api/resources/new?limit=${limit}&page=${page}`
     fetch(url)
       .then(response => response.json())
       .then(json => {
@@ -60,7 +60,7 @@ class Resources extends Component {
   render() {
     return <ul className="resources resource-container">
       {
-        this.state.docs.map(resource => <li key={resource.id}>
+        this.state.docs.map(resource => <li key={resource._id}>
           <Resource {...resource} />
         </li>)
       }

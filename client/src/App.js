@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-      <Navigation />
+        <Navigation />
         <Resources />
         <Footer />
       </div>
