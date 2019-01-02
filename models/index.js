@@ -1,4 +1,3 @@
 module.exports = {
-  Resource: require('./resource'),
-  Path: require('./path')
+  Resource: require('./resource')
 };

@@ -91,6 +91,7 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   update: function(req, res) {
+    console.log('req.params.id', req.params.id);
     db.Resource
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbResource => {

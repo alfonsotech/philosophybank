@@ -5,11 +5,6 @@
   align-items: flex-start;
   margin: 0 !important;
   padding: 0 !important;
-
-}
-
-.list-item {
-  /* width: 40%; */
 }
 .resource-body>small>p>span {
   color: rgba(0,0,0,.6);
@@ -30,95 +25,6 @@
 .Resource .heart:hover {
   color: rgba(255,140,0, 1);
 }
-.description {
-  color: black;
-  font-size: 18px;
-  clear:both;
-}
-/* .Resource .upvote-button button {
-  margin-right: 5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: black;
-}
-.Resource .upvote-button button:hover {
-  color: rgb(255,140,0);
-  background-color: #fff;
-  border-color: rgb(255,140,0)
-} */
-
-/* .Resource:hover {
-  outline: 1px dotted rgba(0, 0, 0, .1);
-} */
-/* .resource-module {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-} */
-.resource-notes {
-  padding: 5px;
-  overflow:scroll;
-}
-.resource-notes textarea {
-  width: 100%;
-  height: 200px;
-}
-
-/*Make iFrame responsive*/
-/* .resource-content {
-  position: relative;
-  height: 0;
-  margin: 0;
-  padding: 0;
-} */
-/* 16x9 Aspect Ratio */
-/* .resource-content-16x9 {
-  padding-bottom: 56.25%;
-} */
-
-/* 4x3 Aspect Ratio */
-/* .resource-content-4x3 {
-  padding-bottom: 75%;
-} */
-
-/* .resource-content iframe {
-  position: absolute;
-  top:0px;
-  bottom: -100px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-} */
-/* .under-link, .under-link:visited {
-  color: lightgray;
-}
-.under-link:hover {
-  color:darkgray;
-} */
-/* .broken-link-button {
-  float: right;
-}
-.broken-link-button a {
-  color: darkgray !important;
-  padding: 10px;
-} */
-/* .list-item {
-  padding: 0 0 0 25px;
-} */
-.card-item {
-padding: 0 0 5px 0;
-color: rgba(0,0,0,.2);
-
-}
-.card-item>div {
-  /* padding:3px 3px 3px 3px !important; */
-}
-.card-item>div>div {
- padding: 3px 25px  !important;
-}
-
 .small-text {
   margin: 0;
   padding-left: 10px;

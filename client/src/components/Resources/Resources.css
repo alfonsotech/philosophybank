@@ -1,63 +1,47 @@
 .resources {
-  list-style: none;
   padding-left: 0;
 }
-
-.Topics {
+.Resources {
   padding: 0 80px;
 }
-
-.Topics ol {
+.Resources ol {
   padding-left: 0;
-  /* border: 1px solid rgba(0,0,0,.2);
-  border-top-right-radius: 20px; */
 }
-
-.Topics h2 {
+.Resources h2 {
   color: black;
   font-size: 1.5em;
 }
-
-.Topics a {
+.Resources a {
   color: black
 }
-
-.Topics a:hover {
+.Resources a:hover {
   color: black
 }
-
 .categories {
   outline: 1px solid red;
   padding: 1px;
 }
-
 .search-box {
-  text-align: center;
-  margin: 40px;
+  text-align: right;
+  margin: 0px;
 }
-
 .search-box input {
   width: 50%;
   padding: 10px;
 }
 
 @media only screen and (max-width: 600px) {
-
-  .Topics {
+  .Resources {
     padding: 0 20px;
   }
-
   .search-box {
     font-size: 14px;
     margin: 20px;
   }
-
   .search-box input {
     width: 100%;
   }
-
   .form-control, input {
     border-width: 1px;
   }
-
 }

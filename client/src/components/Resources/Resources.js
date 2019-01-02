@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import Resource from '../Resource'
+import Submit from '../../pages/Submit'
 import './Resources.css'
 
 class Resources extends Component {
@@ -12,15 +13,15 @@ class Resources extends Component {
     page: 1,
     pages: null,
     scrolling: false,
-    trendingTopics:[],
-    newTopics: [],
-    currentView: 'newTopics',
+    trendingResources:[],
+    newResources: [],
+    currentView: 'trendingResources',
     search:''
   }
 
   componentDidMount() {
-    this.loadTrendingTopics()
-    this.loadNewTopics()
+    this.loadTrendingResources()
+    this.loadNewResources()
     this.scrollListener = window.addEventListener('scroll', (e) => {
       this.handleScroll(e)
     })
@@ -30,7 +31,7 @@ class Resources extends Component {
     const { scrolling, pages, page} = this.state
     if (scrolling) return
     if (pages <= page) return
-    var lastLi = document.querySelector('ul.resources > li:last-child')
+    var lastLi = document.querySelector('ol.resources > li:last-child')
 
     var lastLiOffset = lastLi.offsetTop + lastLi.clientHeight
     var pageOffset = window.pageYOffset + window.innerHeight
@@ -41,14 +42,14 @@ class Resources extends Component {
 
   }
 
-  loadTrendingTopics = () => {
-    const { limit, page, trendingTopics } = this.state
+  loadTrendingResources = () => {
+    const { limit, page, trendingResources } = this.state
     let url = `/api/resources/trending?limit=${limit}&page=${page}`
     fetch(url)
       .then(response => response.json())
       .then(json => {
         this.setState({
-        trendingTopics: [...trendingTopics, ...json.docs],
+        trendingResources: [...trendingResources, ...json.docs],
         scrolling: false,
         pages: json.total_pages,
       })
@@ -56,14 +57,14 @@ class Resources extends Component {
   }
 
 
-  loadNewTopics = () => {
-    const { limit, page, newTopics } = this.state
+  loadNewResources = () => {
+    const { limit, page, newResources } = this.state
     let url = `/api/resources/new?limit=${limit}&page=${page}`
     fetch(url)
       .then(response => response.json())
       .then(json => {
         this.setState({
-        newTopics: [...newTopics, ...json.docs],
+        newResources: [...newResources, ...json.docs],
         scrolling: false,
         pages: json.total_pages,
       })
@@ -71,16 +72,16 @@ class Resources extends Component {
   }
 
   loadMore = () => {
-    if(this.state.currentView === 'trendingTopics') {
+    if(this.state.currentView === 'trendingResources') {
       this.setState(prevState => ({
         page: prevState.page+1,
         scrolling: true,
-      }), this.loadTrendingTopics)
+      }), this.loadTrendingResources)
     } else {
       this.setState(prevState => ({
         page: prevState.page+1,
         scrolling: true,
-      }), this.loadNewTopics)
+      }), this.loadNewResources)
     }
 
 
@@ -98,9 +99,11 @@ class Resources extends Component {
     })
   }
 
+
+
   render() {
 
-    let filteredTopics = this.state[this.state.currentView].filter(
+    let filteredResources = this.state[this.state.currentView].filter(
       resource => {
         for(var i =0; i< resource.author.length; i++) {
           var author = resource.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -142,28 +145,27 @@ class Resources extends Component {
     );
 
     return (
-      <div className="Topics">
+      <div className="Resources">
+      < Submit />
       <div className="page-header">
-        <h1>Topics are...</h1>
-        <h3>... written, audio, or video content, crowd-sourced and upv♥ted by you. Go ahead, click on a topic to check it out. Upvote it if you'd recommend it to others. <a href="/submit">Then submit your favorite topics here.</a></h3>
-
         <div className="search-box">
           <input type="text" placeholder="search topics"
             value={this.state.search}
             onChange={this.updateSearch}
             ></input>
+
           </div>
       </div>
-        <button onClick={() => this.changeView('trendingTopics')}  className='header-button'>Trending Topics</button>
+        <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources</button>
 
-        <button onClick={() => this.changeView('newTopics')} className='header-button'>New Topics</button>
-        <ul className="resources resource-container">
+        <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
+        <ol className="resources resource-container">
           {
-            filteredTopics.map(resource => <li key={resource._id}>
-              <Resource {...resource} />
+            filteredResources.map(resource => <li key={resource._id}>
+              <Resource {...resource} history={this.props.history}/>
             </li>)
           }
-        </ul>
+        </ol>
     </div>
   )}
 
