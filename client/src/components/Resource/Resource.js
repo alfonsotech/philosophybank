@@ -97,7 +97,7 @@ class Resource extends Component {
       <div className="list-item">
           <div className="Resource">
             <div className="resource-body">
-              <small>
+              <small><small>
                 <p className="small-text">
                 <span onClick={this.handleUpvote}>
                   <FontAwesome
@@ -112,10 +112,10 @@ class Resource extends Component {
                   style={{ padding: 5, margin:0}}
                 />{this.state.views}</span>
                 </p>
-              </small>
+              </small></small>
 
               <h5 onClick={this.handleOpen} className={this.state.category}>
-                <span>{this.props.index}</span>
+                <span>{this.props.index + 1}.</span>
                 <span>{this.state.title}</span>
               </h5>
             </div>

@@ -3,8 +3,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px dotted rgba(0,0,0,0.1)
 }
 .resource-body>small>p>span {
   color: rgba(0,0,0,.6);
@@ -26,6 +27,6 @@
   color: rgba(255,140,0, 1);
 }
 .small-text {
-  margin: 0;
-  padding-left: 10px;
+  margin: 0 0 0 9px;
+  padding-left: 3px;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import Resource from '../Resource'
 import Submit from '../../pages/Submit'
+import Header from '../Header'
 import './Resources.css'
 
 class Resources extends Component {
@@ -109,7 +110,10 @@ class Resources extends Component {
           var author = resource.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
         }
 
-        var title = resource.title.toLowerCase().indexOf(this.state.search.toLowerCase())!== -1
+        if(resource.title) {
+          var title = resource.title.toLowerCase().indexOf(this.state.search.toLowerCase())!== -1
+        }
+
 
         if(resource.description) {
           var description = resource.description.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
@@ -146,23 +150,25 @@ class Resources extends Component {
 
     return (
       <div className="Resources">
-      < Submit />
-      <div className="page-header">
+        <Header />
         <div className="search-box">
-          <input type="text" placeholder="search topics"
-            value={this.state.search}
-            onChange={this.updateSearch}
-            ></input>
-
+        <input  type="text" placeholder="Search Resources"
+          value={this.state.search}
+          onChange={this.updateSearch}
+          ></input>
           </div>
-      </div>
-        <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources</button>
+        <div className="views-container">
+          <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources |</button>
+          <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
 
-        <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
+
+
+        </div>
+
         <ol className="resources resource-container">
           {
-            filteredResources.map(resource => <li key={resource._id}>
-              <Resource {...resource} history={this.props.history}/>
+            filteredResources.map((resource, index) => <li key={resource._id}>
+              <Resource {...resource} index={index} history={this.props.history}/>
             </li>)
           }
         </ol>

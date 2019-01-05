@@ -8,7 +8,6 @@ import NoMatch from "./pages/NoMatch"
 const App = () =>
       <Router>
         <div>
-        <Navigation />
           <Switch>
             <Route exact path="/" component={Resources} />
             <Route component={NoMatch} />
