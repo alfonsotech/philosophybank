@@ -5,7 +5,7 @@
   align-items: flex-start;
   margin: 0;
   padding: 5px 0;
-  border-bottom: 1px dotted rgba(0,0,0,0.1)
+  /* border-bottom: 1px dotted rgba(0,0,0,0.1) */
 }
 .resource-body>small>p>span {
   color: rgba(0,0,0,.6);

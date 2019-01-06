@@ -15,7 +15,7 @@ class Resources extends Component {
     scrolling: false,
     trendingResources:[],
     newResources: [],
-    currentView: 'trendingResources',
+    currentView: 'newResources',
     search:''
   }
 

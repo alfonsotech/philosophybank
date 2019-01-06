@@ -4,7 +4,6 @@ import axios from "axios"
 import MicrolinkCard from '@microlink/react'
 import './Resource.css'
 
-
 class Resource extends Component {
   constructor(props) {
     super(props)
@@ -54,8 +53,6 @@ class Resource extends Component {
     })
   }
 
-
-
   handleUpvote = () => {
     const upvoted = this.state.upvotes + 1
     this.setState({upvotes:upvoted})
@@ -71,15 +68,7 @@ class Resource extends Component {
     axios.put("/api/resources/" + this.state._id, {
       views: viewed
     })
-  }
-
-  handleOpen = () => {
-    this.handleUpViews()
-    if(this.state.media) {
-      window.open(this.state.media)
-    } else {
-      window.open(this.state.url)
-    }
+      this.props.history.push('/')
   }
 
   render() {
@@ -89,32 +78,25 @@ class Resource extends Component {
           <div className="Resource">
             <div className="resource-body">
 
-                <p className="small-text">
+                <p className={this.state.category}>
+                <span>Rank#:{this.props.index + 1}</span>
                 <span onClick={this.handleUpvote}>
                   <FontAwesome
                     className='heart'
                     name='heart'
                     style={{ padding: 5, margin:0}}
-                  /> {this.state.upvotes}</span>
+                  /> Upvotes: {this.state.upvotes}</span>
                 <span>
                   <FontAwesome
                   className='icon'
                   name='eye'
                   style={{ padding: 5, margin:0}}
-                />{this.state.views}</span>
+                />Views: {this.state.views}</span>
                 </p>
-
-
-              <h5 className={this.state.category}>
-                <span>Rank:{this.props.index + 1}.</span>
-                <span>Upvotes:{this.state.upvotes}</span>
-                <span>Views:{this.state.upvotes}</span>
-                <MicrolinkCard url={this.state.url} target='_blank' size='large' />
-              </h5>
+                <MicrolinkCard onClick={this.handleUpViews} url={this.state.url} target='_blank' size='large' />
             </div>
           </div>
       </div>
-
     )
   }
 }

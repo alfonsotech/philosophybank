@@ -61,9 +61,8 @@ module.exports = {
     })
   },
   findById: function(req, res) {
-    console.log('req.params._id', req.params._id);
     db.Resource
-      .findById(req.params._id)
+      .findById(req.params.id)
       .then(dbResource => res.json(dbResource))
       .catch(err => res.status(422).json(err))
   },
@@ -92,9 +91,9 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   update: function(req, res) {
-    console.log('req.params._id', req.params._id);
+    console.log('req.params.id', req.params.id);
     db.Resource
-      .findOneAndUpdate({ _id: req.params._id }, req.body)
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbResource => {
         res.json(dbResource)
       })
@@ -102,7 +101,7 @@ module.exports = {
   },
   remove: function(req, res) {
     db.Resource
-      .findById({ _id: req.params._id })
+      .findById({ _id: req.params.id })
       .then(dbResource => dbResource.remove())
       .then(dbResource => res.json(dbResource))
       .catch(err => res.status(422).json(err))
