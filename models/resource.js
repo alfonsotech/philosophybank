@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const mongoosePaginate = require('mongoose-paginate');
-// const Schema = mongoose.Schema;
 
 const resourceSchema = new Schema({
-  title: { type: String, required: true },
+  title: { type: String, required: false },
   author: { type: Array, required: false },
   url: { type: String, required: true },
   duration: { type: String, required: false },
@@ -31,6 +30,4 @@ const resourceSchema = new Schema({
 });
 
 resourceSchema.plugin(mongoosePaginate);
-// const Resource = mongoose.model("Resource", resourceSchema);
-// module.exports = Resource;
 module.exports = mongoose.model('Resource', resourceSchema);

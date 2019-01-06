@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import Resource from '../Resource'
-import Submit from '../../pages/Submit'
 import Header from '../Header'
 import './Resources.css'
 
@@ -150,7 +149,7 @@ class Resources extends Component {
 
     return (
       <div className="Resources">
-        <Header />
+        <Header history={this.props.history} />
         <div className="search-box">
         <input  type="text" placeholder="Search Resources"
           value={this.state.search}
@@ -160,15 +159,12 @@ class Resources extends Component {
         <div className="views-container">
           <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources |</button>
           <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
-
-
-
         </div>
 
         <ol className="resources resource-container">
           {
             filteredResources.map((resource, index) => <li key={resource._id}>
-              <Resource {...resource} index={index} history={this.props.history}/>
+              <Resource {...resource} index={index} history={this.props.history} />
             </li>)
           }
         </ol>

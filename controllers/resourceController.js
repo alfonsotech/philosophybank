@@ -60,14 +60,14 @@ module.exports = {
     })
   },
   findById: function(req, res) {
-    console.log('req.params.id', req.params.id);
+    console.log('req.params._id', req.params._id);
     db.Resource
-      .findById(req.params.id)
+      .findById(req.params._id)
       .then(dbResource => res.json(dbResource))
       .catch(err => res.status(422).json(err))
   },
   create: function(req, res) {
-
+    console.log('req.body', req.body);
     const resource = {
       title: req.body.title,
       author:req.body.author,
@@ -91,9 +91,9 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   update: function(req, res) {
-    console.log('req.params.id', req.params.id);
+    console.log('req.params._id', req.params._id);
     db.Resource
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ _id: req.params._id }, req.body)
       .then(dbResource => {
         res.json(dbResource)
       })
@@ -101,7 +101,7 @@ module.exports = {
   },
   remove: function(req, res) {
     db.Resource
-      .findById({ _id: req.params.id })
+      .findById({ _id: req.params._id })
       .then(dbResource => dbResource.remove())
       .then(dbResource => res.json(dbResource))
       .catch(err => res.status(422).json(err))

@@ -23,30 +23,16 @@ class Header extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault()
+    console.log('this.state', this.state);
+    const {url, upvotes, views} = this.state
 
-    const {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition} = this.state
-
-    axios.post('/api/resources',  {title, author, url, duration, description, upvotes, views, notes, media, mediaType, institution, categories, level, path, position, pathPosition})
+    axios.post('/api/resources', {url, upvotes, views})
     .then( data => {
             console.log('form submitted, the following resource was added:', data)
             this.setState({
-
-                title: '',
-                author:[],
                 url: '',
-                duration:'n/a',
-                description: '',
                 upvotes: 1,
-                views: 0,
-                notes: '',
-                media: '',
-                mediaType: '',
-                institution: '',
-                categories: [],
-                level: '',
-                path: [],
-                position: 0,
-                pathPosition: []
+                views: 0
             })
             this.props.history.push('/')
           });
