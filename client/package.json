@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@microlink/react": "^3.0.5",
+    "ajv": "^6.6.2",
     "axios": "^0.17.1",
-    "emotion": "^9.0.2",
+    "emotion": "^8.0.12",
     "isomorphic-fetch": "^2.2.1",
     "link-preview": "^1.0.0",
     "material-ui": "^0.20.0",
@@ -14,7 +16,8 @@
     "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.0.17",
-    "react-spinners": "^0.2.6"
+    "react-spinners": "^0.2.6",
+    "styled-components": "^4.1.3"
   },
   "scripts": {
     "start": "react-scripts start",

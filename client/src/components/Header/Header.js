@@ -23,7 +23,6 @@ class Header extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault()
-    console.log('this.state', this.state);
     const {url, upvotes, views} = this.state
 
     axios.post('/api/resources', {url, upvotes, views})

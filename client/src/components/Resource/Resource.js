@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import axios from "axios"
+import MicrolinkCard from '@microlink/react'
 import './Resource.css'
-// import Dialog from 'material-ui/Dialog'
-// import FlatButton from 'material-ui/FlatButton';
-// import Toggle from 'material-ui/Toggle';
-// import fontawesome from 'react-fontawesome'
+
 
 class Resource extends Component {
   constructor(props) {
@@ -90,7 +88,7 @@ class Resource extends Component {
       <div className="list-item">
           <div className="Resource">
             <div className="resource-body">
-              <small><small>
+
                 <p className="small-text">
                 <span onClick={this.handleUpvote}>
                   <FontAwesome
@@ -105,11 +103,13 @@ class Resource extends Component {
                   style={{ padding: 5, margin:0}}
                 />{this.state.views}</span>
                 </p>
-              </small></small>
 
-              <h5 onClick={this.handleOpen} className={this.state.category}>
-                <span>{this.props.index + 1}.</span>
-                <span>{this.state.title}</span>
+
+              <h5 className={this.state.category}>
+                <span>Rank:{this.props.index + 1}.</span>
+                <span>Upvotes:{this.state.upvotes}</span>
+                <span>Views:{this.state.upvotes}</span>
+                <MicrolinkCard url={this.state.url} target='_blank' size='large' />
               </h5>
             </div>
           </div>

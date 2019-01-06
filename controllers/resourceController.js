@@ -1,5 +1,6 @@
 const db = require("../models")
 
+
 module.exports = {
   findAll: function(req, res) {
     var options = {
@@ -67,7 +68,7 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   create: function(req, res) {
-    console.log('req.body', req.body);
+
     const resource = {
       title: req.body.title,
       author:req.body.author,
