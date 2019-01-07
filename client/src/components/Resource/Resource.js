@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import axios from "axios"
-import MicrolinkCard from '@microlink/react'
 import './Resource.css'
 
 class Resource extends Component {
@@ -73,29 +72,39 @@ class Resource extends Component {
 
   render() {
     // console.log('this.props.history', this.props.history);
+
     return (
-      <div className="list-item">
-          <div className="Resource">
+      <div className="Resource" id={this.state._id}>
+        <div className="resource-header">
+            <p className={this.state.category}>
+            <span>Rank#:{this.props.index + 1}</span>
+            <span onClick={this.handleUpvote}>
+              <FontAwesome
+                className='heart'
+                name='heart'
+                style={{ padding: 5, margin:0}}
+              /> Upvotes: {this.state.upvotes}</span>
+            <span>
+              <FontAwesome
+              className='icon'
+              name='eye'
+              style={{ padding: 5, margin:0}}
+            />Views: {this.state.views}</span>
+            </p>
+            </div>
             <div className="resource-body">
 
-                <p className={this.state.category}>
-                <span>Rank#:{this.props.index + 1}</span>
-                <span onClick={this.handleUpvote}>
-                  <FontAwesome
-                    className='heart'
-                    name='heart'
-                    style={{ padding: 5, margin:0}}
-                  /> Upvotes: {this.state.upvotes}</span>
-                <span>
-                  <FontAwesome
-                  className='icon'
-                  name='eye'
-                  style={{ padding: 5, margin:0}}
-                />Views: {this.state.views}</span>
-                </p>
-                <MicrolinkCard onClick={this.handleUpViews} url={this.state.url} target='_blank' size='large' />
+            {this.state.media ? this.state.media === null ?
+            <img className="resource-img" src={this.state.media} alt={this.state.title} /> : <img className="resource-img" src={'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available'} alt={this.state.title} />  :   <iframe src={this.state.url}></iframe>}
+
+            <div className="resource-text">
+              <h2 onClick={this.handleUpViews}><a href={this.state.url} target="_blank">
+                {this.state.title}</a>
+              </h2>
+              <p>{this.state.description}</p>
+              <small><p><a href={this.state.url} target="_blank">{this.state.mediaType}</a></p></small>
             </div>
-          </div>
+        </div>
       </div>
     )
   }

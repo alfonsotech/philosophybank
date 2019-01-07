@@ -1,33 +1,17 @@
 import React from "react"
 import FontAwesome from 'react-fontawesome'
 import './Footer.css'
-import { Link } from "react-router-dom"
 
 const Footer = () => (
   <footer>
+    <hr />
     <div className="footer">
-      <div className="footer-links">
-        <ul>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-          <li>
-            <Link to="/paths">Paths</Link>
-          </li>
-          {/* <li>
-            <Link to="/tribes">Tribes</Link>
-          </li> */}
-          <li>
-            <Link className="submit-button" to="/submit">Submit</Link>
-          </li>
-        </ul>
-      </div>
+
       <div className="footer-contact">
 
         <ul>
           <li><h6>CONTACT</h6></li>
           <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Feature%20Request">Feature Request</a></li>
-          <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=SUggest%20A%20Path">Suggest A Path</a></li>
           <li><a target="_top"  rel="noopener noreferrer" href="mailto:thinkphilosophy@nym.hush.com?Subject=Report%20Bug">Report Bug</a></li>
         </ul>
         <hr />
@@ -70,8 +54,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="footer-legal">
-      <small><p>Copyright &copy; 2018 AlfonsoTech - A thinkPhilosophy Production.</p></small>
-       <small><p className="photo-credit">Thanks to <a href="https://unsplash.com/photos/yQAtbM9Scwc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Adrian Pelletier</a> and <a href="https://unsplash.com/search/photos/john-mark" target="_blank" rel="noopener noreferrer" >John Mark</a> on Unsplash for the homepage photos.</p></small>
+      <small><p>Copyright &copy; 2019 AlfonsoTech - A thinkPhilosophy Production.</p></small>
     </div>
     </footer>
 );

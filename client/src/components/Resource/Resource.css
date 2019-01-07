@@ -1,32 +1,35 @@
-.Resource {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 0;
-  padding: 5px 0;
-  /* border-bottom: 1px dotted rgba(0,0,0,0.1) */
-}
-.resource-body>small>p>span {
-  color: rgba(0,0,0,.6);
-  font-size: 1.25em;
-}
-.Resource h5 {
+.resource-header h5 {
   color: black;
   margin: 0;
 }
-.Resource span {
-  padding: 0 3px;
+.resource-header span {
+  padding: 0;
 }
-.Resource .heart {
+.resource-header .heart {
   width: 20px;
   height: 20px;
   color: rgba(255,140,0, .8);
 }
-.Resource .heart:hover {
+.resource-header .heart:hover {
   color: rgba(255,140,0, 1);
 }
-.small-text {
-  margin: 0 0 0 9px;
-  padding-left: 3px;
+.resource-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.resource-body iframe {
+  /* width: 50%; */
+  margin-right: 10px;
+}
+.resource-body img {
+  width: 30%;
+  margin-right: 10px;
+  padding:5px;
+  outline:1px dotted rgba(0,0,0,0.4);
+}
+.resource-text {
+  width: 60%;
+  margin-top: -20px;
 }

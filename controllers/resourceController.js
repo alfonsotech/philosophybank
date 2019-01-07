@@ -1,5 +1,5 @@
 const db = require("../models")
-
+const linkPreview = require("link-preview")
 
 module.exports = {
   findAll: function(req, res) {
@@ -26,6 +26,7 @@ module.exports = {
     db.Resource
     .paginate({}, options)
     .then(response => {
+      console.log('response', response);
       res.json(response)
     })
   },
@@ -67,18 +68,18 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   create: function(req, res) {
-
+    linkPreview.parse(req.body.url).then(function(data) {
     const resource = {
-      title: req.body.title,
+      title: data.title,
       author:req.body.author,
       url: req.body.url,
       duration: req.body.duration,
-      description: req.body.description,
+      description: data.des,
       upvotes: req.body.upvotes,
       views: req.body.views,
       notes: req.body.notes,
-      media: req.body.media,
-      mediaType: req.body.mediaType,
+      media: data.imgs[1],
+      mediaType: data.host,
       institution: req.body.institution,
       categories: req.body.categories,
       level: req.body.level,
@@ -89,15 +90,43 @@ module.exports = {
       .create(resource)
       .then(dbResource => res.json(dbResource))
       .catch(err => res.status(422).json(err))
+    });
+
+
+
   },
   update: function(req, res) {
-    console.log('req.params.id', req.params.id);
     db.Resource
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbResource => {
         res.json(dbResource)
       })
       .catch(err => res.status(422).json(err))
+  },
+  updateAll: function(req, res) {
+    linkPreview.parse(req.body.url).then(function(data) {
+    const resource = {
+      title: data.title,
+      author:req.body.author,
+      url: req.body.url,
+      duration: req.body.duration,
+      description: data.des,
+      upvotes: req.body.upvotes,
+      views: req.body.views,
+      notes: req.body.notes,
+      media: data.imgs[1],
+      mediaType: data.host,
+      institution: req.body.institution,
+      categories: req.body.categories,
+      level: req.body.level,
+      path: req.body.path,
+      position: req.body.position
+    }
+    db.Resource
+      .update(resource)
+      .then(dbResource => res.json(dbResource))
+      .catch(err => res.status(422).json(err))
+    });
   },
   remove: function(req, res) {
     db.Resource

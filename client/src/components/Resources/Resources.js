@@ -9,7 +9,7 @@ class Resources extends Component {
     docs: [],
     history:null,
     total: null,
-    limit: 10,
+    limit: 3,
     page: 1,
     pages: null,
     scrolling: false,
@@ -105,6 +105,7 @@ class Resources extends Component {
 
     let filteredResources = this.state[this.state.currentView].filter(
       resource => {
+
         for(var i =0; i< resource.author.length; i++) {
           var author = resource.author[i].toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1
         }
@@ -161,9 +162,9 @@ class Resources extends Component {
           <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
         </div>
 
-        <ol className="resources resource-container">
+        <ol className="resources">
           {
-            filteredResources.map((resource, index) => <li key={resource._id}>
+            filteredResources.map((resource, index) => <li className="list-item" key={resource._id}>
               <Resource {...resource} index={index} history={this.props.history} />
             </li>)
           }
