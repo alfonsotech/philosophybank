@@ -45,7 +45,7 @@ class Header extends Component {
             <Navbar.Brand>
               <a href="/">Philosophy Rank <small>(beta)</small>  <p><small><small>Crowd-Sourced & Ranked Philosophy Resources</small></small></p></a>
             </Navbar.Brand>
-            <Navbar.Toggle />
+            
           </Navbar.Header>
           <Nav pullRight>
             <NavItem>
