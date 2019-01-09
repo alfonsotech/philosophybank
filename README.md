@@ -1,6 +1,10 @@
-# Philosophy RanK
+# Philosophy Rank
 
-Application tool that allows users to crowdsource, rank, and search online philosophy content.
+Application tool that allows users to crowdsource, rank, and search online philosophy content. 
+
+### Features
+Infinite scrolling for resoruces view
+Resource preview that includes resource image or video, title, description, and source.
 
 
 ## Getting Started
