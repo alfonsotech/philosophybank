@@ -94,8 +94,8 @@ class Resource extends Component {
             </div>
             <div className="resource-body">
 
-            {this.state.media ? this.state.media === null ?
-            <img className="resource-img" src={this.state.media} alt={this.state.title} /> : <img className="resource-img" src={'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available'} alt={this.state.title} />  :   <iframe src={this.state.url}></iframe>}
+            {this.state.media ?
+            <img className="resource-img" src={this.state.media || 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available' } alt={this.state.title} /> : <iframe src={this.state.url}></iframe>}
 
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.state.url} target="_blank">

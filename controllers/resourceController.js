@@ -69,6 +69,7 @@ module.exports = {
   },
   create: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
+      console.log('data.imgs>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data.imgs[0]);
     const resource = {
       title: data.title,
       author:req.body.author,
@@ -78,7 +79,7 @@ module.exports = {
       upvotes: req.body.upvotes,
       views: req.body.views,
       notes: req.body.notes,
-      media: data.imgs[1],
+      media: data.imgs[0],
       mediaType: data.host,
       institution: req.body.institution,
       categories: req.body.categories,

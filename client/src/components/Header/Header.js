@@ -28,12 +28,12 @@ class Header extends Component {
     axios.post('/api/resources', {url, upvotes, views})
     .then( data => {
         console.log('form submitted, the following resource was added:', data)
-        // this.setState({
-        //     url: '',
-        //     upvotes: 1,
-        //     views: 0
-        // })
-          this.props.history.push('/')
+        this.setState({
+            url: '',
+            upvotes: 1,
+            views: 0
+        })
+        this.props.history.push('/')
       });
       this.props.history.push('/')
   }
@@ -45,7 +45,6 @@ class Header extends Component {
             <Navbar.Brand>
               <a href="/">Philosophy Rank <small>(beta)</small>  <p><small><small>Crowd-Sourced & Ranked Philosophy Resources</small></small></p></a>
             </Navbar.Brand>
-            
           </Navbar.Header>
           <Nav pullRight>
             <NavItem>
