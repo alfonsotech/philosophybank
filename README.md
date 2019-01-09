@@ -20,9 +20,9 @@ Application tool that allows users to crowdsource, rank, and search online philo
 * [mongoose](https://www.npmjs.com/package/mongoose)
 * [react-bootstrap](https://www.npmjs.com/package/react-bootstrap)
 * [react-fontawesome](https://www.npmjs.com/package/react-fontawesome)
-* [link-preview]https://www.npmjs.com/package/link-preview
+* [link-preview](https://www.npmjs.com/package/link-preview)
 * [axios](https://www.npmjs.com/package/axios)
-* [isomorphic-fetch]https://www.npmjs.com/package/isomorphic-fetch
+* [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch)
 
 ## Author
 
