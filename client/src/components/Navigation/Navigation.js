@@ -12,7 +12,7 @@ const Navigation = () => (
   <Navbar collapseOnSelect>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">Philosophy Rank <small>(beta)</small>  <p><small><small>Crowd-Sourced & Ranked Philosophy Resources</small></small></p></a>
+        <a href="/">Philosophy, Ranked <small>(beta)</small>  <p><small><small>Show Your Favorite Philosophy Resources Some Heart</small></small></p></a>
       </Navbar.Brand>
       <Navbar.Toggle />
     </Navbar.Header>

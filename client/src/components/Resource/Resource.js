@@ -31,11 +31,12 @@ class Resource extends Component {
 
   componentDidMount = () => {
     let resource = this.props
+
     this.setState({
       _id: resource._id,
       title: resource.title,
       author:resource.author,
-      url: resource.url,
+      url: resource.url.replace("watch?v=", "v/"),
       duration: resource.duration,
       description: resource.description,
       upvotes: resource.upvotes,
@@ -95,7 +96,7 @@ class Resource extends Component {
             <div className="resource-body">
 
             {this.state.media ?
-            <img className="resource-img" src={this.state.media || 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available' } alt={this.state.title} /> : <iframe src={this.state.url}></iframe>}
+            <img className="resource-img" src={this.state.media || 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available' } alt={this.state.title} /> : <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>}
 
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.state.url} target="_blank">

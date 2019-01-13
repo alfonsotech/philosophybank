@@ -43,7 +43,7 @@ class Header extends Component {
         <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">Philosophy Rank <small>(beta)</small>  <p><small><small>Crowd-Sourced & Ranked Philosophy Resources</small></small></p></a>
+              <a href="/">Philosophy, Ranked <small><small>(beta)</small></small>  <p><small><small>Crowdsourced and Upv♥ted By You</small></small></p></a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
