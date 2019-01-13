@@ -15,9 +15,9 @@ app.use(routes)
 
 //Mongoose Connection
 mongoose.Promise = global.Promise
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ppp")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/philosophyranked")
 mongoose.connection.on('connected', function () {
-  console.log('Mongoose default connection open to mongodb://localhost/ppp');
+  console.log('Mongoose default connection open to mongodb://localhost/philosophyranked');
 });
 mongoose.connection.on('error',function (err) {
   console.log('Mongoose default connection error: ' + err);
