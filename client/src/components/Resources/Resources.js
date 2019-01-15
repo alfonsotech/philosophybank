@@ -158,7 +158,8 @@ class Resources extends Component {
           ></input>
           </div>
         <div className="views-container">
-          <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources |</button>
+          <button onClick={() => this.changeView('trendingResources')}  className='header-button'>Trending Resources</button>
+          <span>|</span>
           <button onClick={() => this.changeView('newResources')} className='header-button'>New Resources</button>
         </div>
 

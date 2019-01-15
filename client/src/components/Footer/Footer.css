@@ -61,12 +61,10 @@ footer {
     flex-direction: column-reverse;
     justify-content: center;
   }
-  /* .header-button {
-    border-top-right-radius: 0;
-    margin: 3px;
-    padding: 3px;
-    outline: 1px solid rgba(0,0,0,.2)
-} */
+  .footer-legal {
+    margin: 40px 0 10px 0;
+    text-align: center;
+  }
   ul {
     padding-left: 0 !important;
   }

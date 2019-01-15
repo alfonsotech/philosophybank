@@ -33,3 +33,23 @@
   width: 60%;
   margin-top: -20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .resource-body {
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+  }
+  .resource-text {
+    width: 50%;
+    margin:0;
+    /* justify-content: center; */
+  }
+  .resource-body img {
+    width: 50%;
+    margin:0;
+  }
+  .resource-header p {
+    margin: 0;
+  }
+}

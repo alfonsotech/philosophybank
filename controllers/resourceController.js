@@ -69,7 +69,23 @@ module.exports = {
   },
   create: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
-      console.log('data.imgs>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data.imgs[1]);
+      console.log('data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data);
+
+      let mediaImage;
+      if(!data.imgs) {
+          mediaImage = 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available'
+      } else if(data.host === 'epochemagazine.org') {
+          console.log('epoch mag', data.host, data.imgs[2]);
+          mediaImage = data.imgs[2]
+      } else if(data.host === 'medium.com') {
+          console.log('medium host', data.host, data.imgs[4]);
+          mediaImage = data.imgs[4]
+      } else if(data.imgs[1]) {
+          mediaImage = data.imgs[1]
+      } else {
+          mediaImage = data.imgs[0]
+      }
+
     const resource = {
       title: data.title,
       author:req.body.author,
@@ -79,7 +95,7 @@ module.exports = {
       upvotes: req.body.upvotes,
       views: req.body.views,
       notes: req.body.notes,
-      media: data.imgs[1],
+      media:   mediaImage,
       mediaType: data.host,
       institution: req.body.institution,
       categories: req.body.categories,
@@ -106,6 +122,21 @@ module.exports = {
   },
   updateAll: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
+      let mediaImage;
+      if(!data.imgs) {
+          mediaImage = 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available'
+      } else if(data.host === 'epochemagazine.org') {
+          console.log('epoch mag', data.host, data.imgs[2]);
+          mediaImage = data.imgs[2]
+      } else if(data.host === 'medium.com') {
+          console.log('medium host', data.host, data.imgs[4]);
+          mediaImage = data.imgs[4]
+      } else if(data.imgs[1]) {
+          mediaImage = data.imgs[1]
+      } else {
+          mediaImage = data.imgs[0]
+      }
+
     const resource = {
       title: data.title,
       author:req.body.author,
@@ -115,7 +146,7 @@ module.exports = {
       upvotes: req.body.upvotes,
       views: req.body.views,
       notes: req.body.notes,
-      media: data.imgs[1],
+      media:   mediaImage,
       mediaType: data.host,
       institution: req.body.institution,
       categories: req.body.categories,

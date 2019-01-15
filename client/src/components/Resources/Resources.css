@@ -37,11 +37,8 @@
 }
 .header-button {
   border:none;
-  padding: 10px 0 0 0;
-  margin:5px 5px 5px 0;
   /* color: black; change color */
 }
-
 .form-control {
   width: 300px;
 }
@@ -56,6 +53,9 @@
 @media only screen and (max-width: 600px) {
   .Resources {
     padding: 0 20px;
+  }
+  .Resources h2 {
+    font-size: 1em;
   }
   .search-box {
     font-size: 14px;
