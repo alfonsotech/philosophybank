@@ -2,6 +2,53 @@ import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import axios from "axios"
 import './Resource.css'
+import {
+  FacebookShareCount,
+  GooglePlusShareCount,
+  LinkedinShareCount,
+  PinterestShareCount,
+  VKShareCount,
+  OKShareCount,
+  RedditShareCount,
+  TumblrShareCount,
+
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+  VKShareButton,
+  OKShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+  RedditShareButton,
+  EmailShareButton,
+  TumblrShareButton,
+  LivejournalShareButton,
+  MailruShareButton,
+  ViberShareButton,
+  WorkplaceShareButton,
+  LineShareButton,
+  WeiboShareButton,
+
+  FacebookIcon,
+  TwitterIcon,
+  GooglePlusIcon,
+  LinkedinIcon,
+  PinterestIcon,
+  VKIcon,
+  OKIcon,
+  TelegramIcon,
+  WhatsappIcon,
+  RedditIcon,
+  TumblrIcon,
+  MailruIcon,
+  EmailIcon,
+  LivejournalIcon,
+  ViberIcon,
+  WorkplaceIcon,
+  LineIcon,
+} from 'react-share'
 
 class Resource extends Component {
   constructor(props) {
@@ -94,15 +141,117 @@ class Resource extends Component {
             </p>
             </div>
             <div className="resource-body">
-
-            {this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.state.media} alt={this.state.title} />}
-
+            <div className="resource-media">
+              {this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.state.media} alt={this.state.title} />}
+            </div>
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.state.url} target="_blank">
                 {this.state.title}</a>
               </h2>
               <p>{this.state.description}</p>
               <small><p><a href={this.state.url} target="_blank">{this.state.mediaType}</a></p></small>
+              <div className="share-container">
+
+                <div className="share-button">
+                 <TwitterShareButton
+                   url={this.state.url}
+                   title={this.state.title}
+                   via="@tPhilosophia"
+                   >
+                   <TwitterIcon
+                     size={24}
+                     round />
+                 </TwitterShareButton>
+               </div>
+
+               <div className="share-button">
+                <FacebookShareButton
+                  url={this.state.url}
+                  quote={this.state.description}
+                  >
+                  <FacebookIcon
+                    size={24}
+                    round />
+                </FacebookShareButton>
+              </div>
+
+              <div className="share-button">
+                <WhatsappShareButton
+                  url={this.state.url}
+                  title={this.state.title}
+                  separator=":: "
+                  >
+                  <WhatsappIcon size={24} round />
+                </WhatsappShareButton>
+              </div>
+
+              <div className="share-button">
+                <LinkedinShareButton
+                  url={this.state.url}
+                  title={this.state.title}
+                  windowWidth={750}
+                  windowHeight={600}
+                  >
+                  <LinkedinIcon
+                    size={24}
+                    round />
+                </LinkedinShareButton>
+              </div>
+
+              <div className="share-button">
+                <PinterestShareButton
+                  url={String(window.location)}
+                  media={`${String(window.location)}/${this.state.media}`}
+                  windowWidth={1000}
+                  windowHeight={730}
+                  >
+                  <PinterestIcon size={24} round />
+                </PinterestShareButton>
+              </div>
+
+              <div className="share-button">
+                <RedditShareButton
+                  url={this.state.url}
+                  title={this.state.title}
+                  windowWidth={660}
+                  windowHeight={460}
+                  >
+                  <RedditIcon
+                    size={24}
+                    round />
+                </RedditShareButton>
+              </div>
+
+              <div className="share-button">
+                <TumblrShareButton
+                  url={this.state.url}
+                  title={this.state.title}
+                  windowWidth={660}
+                  windowHeight={460}
+                  >
+                  <TumblrIcon
+                    size={24}
+                    round />
+                </TumblrShareButton>
+              </div>
+
+              <div className="share-button">
+                <EmailShareButton
+                  url={this.state.url}
+                  subject={this.state.title}
+                  body={this.state.description + ': ' + this.state.url}
+                  >
+                  <EmailIcon
+                    size={24}
+                    round />
+                </EmailShareButton>
+              </div>
+
+
+
+
+
+              </div>
             </div>
         </div>
       </div>
