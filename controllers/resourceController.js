@@ -80,6 +80,8 @@ module.exports = {
       } else if(data.host === 'medium.com') {
           console.log('medium host', data.host, data.imgs[4]);
           mediaImage = data.imgs[4]
+      } else if(data.host === "www.newyorker.com") {
+          mediaImage = data.imgs[2]
       } else if(data.imgs[1]) {
           mediaImage = data.imgs[1]
       } else {
