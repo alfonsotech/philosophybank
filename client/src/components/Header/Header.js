@@ -20,9 +20,10 @@ class Header extends Component {
       [name]: value
     })
   }
-
-  handleFormSubmit = event => {
-    event.preventDefault()
+//TODO: pass in event and enable event.preventDefault?
+  handleFormSubmit = history => {
+    // event.preventDefault()
+    // console.log('this.props.history 1', history);
     const {url, upvotes, views} = this.state
 
     axios.post('/api/resources', {url, upvotes, views})
@@ -33,12 +34,13 @@ class Header extends Component {
             upvotes: 1,
             views: 0
         })
-        this.props.history.push('/')
+          history.push('/')
       });
-      this.props.history.push('/')
+
   }
 
   render() {
+    // console.log('this.props.history2', this.props.history);
       return (
         <Navbar collapseOnSelect>
           <Navbar.Header>
@@ -49,7 +51,7 @@ class Header extends Component {
           <Nav pullRight>
             <NavItem>
             <div className="Submit">
-              <form onSubmit={this.handleFormSubmit}>
+              <form onSubmit={this.handleFormSubmit(this.props.history)}>
                   <input
                     className="form-control"
                     type="text"
