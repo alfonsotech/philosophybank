@@ -24,10 +24,10 @@
   margin-right: 10px;
 }
 .resource-body img {
-  width: 30%;
+
   margin-right: 10px;
-  padding:5px;
-  outline:1px dotted rgba(0,0,0,0.4);
+
+  outline:1px solid rgba(0,0,0,0.5);
 }
 .resource-text {
   width: 60%;

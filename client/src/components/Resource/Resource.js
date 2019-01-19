@@ -3,51 +3,22 @@ import FontAwesome from 'react-fontawesome'
 import axios from "axios"
 import './Resource.css'
 import {
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-  PinterestShareCount,
-  VKShareCount,
-  OKShareCount,
-  RedditShareCount,
-  TumblrShareCount,
-
   FacebookShareButton,
-  GooglePlusShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   PinterestShareButton,
-  VKShareButton,
-  OKShareButton,
-  TelegramShareButton,
   WhatsappShareButton,
   RedditShareButton,
   EmailShareButton,
   TumblrShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  ViberShareButton,
-  WorkplaceShareButton,
-  LineShareButton,
-  WeiboShareButton,
-
   FacebookIcon,
   TwitterIcon,
-  GooglePlusIcon,
   LinkedinIcon,
   PinterestIcon,
-  VKIcon,
-  OKIcon,
-  TelegramIcon,
   WhatsappIcon,
   RedditIcon,
   TumblrIcon,
-  MailruIcon,
-  EmailIcon,
-  LivejournalIcon,
-  ViberIcon,
-  WorkplaceIcon,
-  LineIcon,
+  EmailIcon
 } from 'react-share'
 
 class Resource extends Component {
