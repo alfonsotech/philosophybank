@@ -69,7 +69,7 @@ module.exports = {
   },
   create: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
-      console.log('data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data);
+      console.log('data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data);
 
       let mediaImage;
       if(!data.imgs) {

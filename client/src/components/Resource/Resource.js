@@ -10,14 +10,12 @@ import {
   WhatsappShareButton,
   RedditShareButton,
   EmailShareButton,
-  TumblrShareButton,
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
   PinterestIcon,
   WhatsappIcon,
   RedditIcon,
-  TumblrIcon,
   EmailIcon
 } from 'react-share'
 
@@ -193,18 +191,7 @@ class Resource extends Component {
                 </RedditShareButton>
               </div>
 
-              <div className="share-button">
-                <TumblrShareButton
-                  url={this.state.url}
-                  title={this.state.title}
-                  windowWidth={660}
-                  windowHeight={460}
-                  >
-                  <TumblrIcon
-                    size={24}
-                    round />
-                </TumblrShareButton>
-              </div>
+              
 
               <div className="share-button">
                 <EmailShareButton
