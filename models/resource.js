@@ -5,7 +5,7 @@ const mongoosePaginate = require('mongoose-paginate');
 const resourceSchema = new Schema({
   title: { type: String, required: false },
   author: { type: Array, required: false },
-  url: { type: String, required: true },
+  url: { type: String, required: true, unique: true },
   duration: { type: String, required: false },
   description: { type: String, required: false },
   upvotes: { type: Number, required: true },
