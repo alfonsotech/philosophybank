@@ -74,21 +74,16 @@ module.exports = {
       let mediaImage;
       if(!data.imgs) {
           mediaImage = 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available';
-          break;
       } else if(data.host === 'epochemagazine.org') {
           console.log('epoch mag', data.host, data.imgs[2]);
           mediaImage = data.imgs[2];
-          break;
       } else if(data.host === 'medium.com') {
           console.log('medium host', data.host, data.imgs[4]);
           mediaImage = data.imgs[4];
-          break;
       } else if(data.host === "www.newyorker.com") {
           mediaImage = data.imgs[2];
-          break;
       } else if(data.imgs[1]) {
           mediaImage = data.imgs[1];
-          break;
       } else {
           mediaImage = data.imgs[0]
       }
