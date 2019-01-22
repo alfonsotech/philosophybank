@@ -125,7 +125,7 @@ class Resource extends Component {
                  <TwitterShareButton
                    url={this.state.url}
                    title={this.state.title}
-                   via="@tPhilosophia"
+                   via="tPhilosophia"
                    >
                    <TwitterIcon
                      size={24}

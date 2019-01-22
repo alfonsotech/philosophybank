@@ -8,7 +8,7 @@
 .resource-header .heart {
   width: 20px;
   height: 20px;
-  color: rgba(255,140,0, .8);
+  color: rgba(67, 167, 239 , .8);
 }
 .resource-header .heart:hover {
   color: rgba(255,140,0, 1);
