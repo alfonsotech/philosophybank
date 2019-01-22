@@ -2,8 +2,8 @@ import React from "react"
 // import { Link } from "react-router-dom"
 import FontAwesome from 'react-fontawesome'
 import { Nav, Navbar, NavItem } from 'react-bootstrap'
-import "./Navigation.css"
 import Submit from '../../pages/Submit'
+import "./Navigation.css"
 
 const submitResource = () => {
   console.log('submit resource button clicked');

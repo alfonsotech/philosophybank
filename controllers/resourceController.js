@@ -70,11 +70,13 @@ module.exports = {
   create: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
       console.log('data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data);
+      console.log('data.imgs.length', data.imgs.length);
+      let mediaImage = '';
 
-      let mediaImage;
-      if(!data.imgs) {
-          mediaImage = 'https://via.placeholder.com/150/000000/FFFFFF/?text=No+Image+Available';
-      } else if(data.host === 'epochemagazine.org') {
+      if(data.imgs.length == 0 || data.imgs.length === null) {
+          mediaImage = 'https://via.placeholder.com/300/FFFFFF/000000/?text=No+Image+Available';
+      }
+      if(data.host === 'epochemagazine.org') {
           console.log('epoch mag', data.host, data.imgs[2]);
           mediaImage = data.imgs[2];
       } else if(data.host === 'medium.com') {

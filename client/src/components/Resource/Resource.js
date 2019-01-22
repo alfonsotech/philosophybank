@@ -111,7 +111,7 @@ class Resource extends Component {
             </div>
             <div className="resource-body">
             <div className="resource-media">
-              {this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.state.media} alt={this.state.title} />}
+              {this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' || this.state.mediaType === "vimeo.com" || this.state.mediaType === "player.vimeo.com" ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.state.media} alt={this.state.title} />}
             </div>
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.state.url} target="_blank">
@@ -191,7 +191,7 @@ class Resource extends Component {
                 </RedditShareButton>
               </div>
 
-              
+
 
               <div className="share-button">
                 <EmailShareButton

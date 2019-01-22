@@ -1,6 +1,11 @@
 .navbar-default {
   margin-bottom: 0;
-  background-color: rgba(255,140,0, .8);
+  background-color: rgba(255,140,0, .2);
+  /* background-image: url('/adrian-pelletier-365930-unsplash.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply; */
 }
 .navbar-brand, .navbar-nav>li>a {
   /* color: rgba(140,0,255, .8) !important; */
