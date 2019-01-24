@@ -45,24 +45,25 @@ class Header extends Component {
         <Navbar collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="/">Philosophy, Ranked <small><small>(beta)</small></small>  <p><small><small>Crowdsourced & Upv♥ted By You</small></small></p></a>
+              <a href="/">Philosophy Bank <small><small>(beta)</small></small>  <p><small><small>Crowdsourced & Upv♥ted By You</small></small></p></a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav pullRight>
             <NavItem>
-            <div className="Submit">
+
               <form onSubmit={this.handleFormSubmit(this.props.history)}>
                   <input
                     className="form-control"
                     type="text"
                     value={this.state.url}
                     name="url"
-                    placeholder='Submit URL'
+                    placeholder='Paste In URL'
                     onChange={this.handleInputChange}
                     required
                   />
+                  <button type="submit">Submit</button>
               </form>
-            </div>
+
             </NavItem>
           </Nav>
         </Navbar>
