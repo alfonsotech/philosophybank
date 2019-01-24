@@ -1,4 +1,4 @@
-# Philosophy Ranked
+# Philosophy Bank
 
 Application that allows users to crowdsource, rank, and search online philosophy content. Features added in this version: Infinite scrolling and resource preview that includes resource image or video, title, description, and name of online source.
 
