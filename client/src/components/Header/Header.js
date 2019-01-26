@@ -20,10 +20,8 @@ class Header extends Component {
       [name]: value
     })
   }
-//TODO: pass in event and enable event.preventDefault?
+
   handleFormSubmit = history => {
-    // event.preventDefault()
-    // console.log('this.props.history 1', history);
     const {url, upvotes, views} = this.state
 
     axios.post('/api/resources', {url, upvotes, views})
@@ -40,7 +38,6 @@ class Header extends Component {
   }
 
   render() {
-    // console.log('this.props.history2', this.props.history);
       return (
         <Navbar collapseOnSelect>
           <Navbar.Header>
@@ -61,7 +58,7 @@ class Header extends Component {
                     onChange={this.handleInputChange}
                     required
                   />
-                  <button type="submit">Submit</button>
+                  <button type="submit" onSubmit={this.handleFormSubmit(this.props.history)}>Submit</button>
               </form>
 
             </NavItem>
@@ -73,40 +70,3 @@ class Header extends Component {
   }
 
 export default Header
-
-// <Navbar.Collapse>
-//
-//   <Nav pullRight>
-//     <NavItem eventKey={1} href="mailto:thinkphilosophy@nym.hush.com?Subject=Inquiry%20About%20PPP">
-//       <FontAwesome
-//         className='nav-social-button'
-//         name='envelope'
-//         size='lg'
-//         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-//       />
-//     </NavItem>
-//     <NavItem eventKey={2}
-//       href="https://medium.com/@tPhilosophia"
-//       target="_blank"
-//       rel="noopener noreferrer">
-//     <FontAwesome
-//       className='nav-social-button'
-//       name='medium'
-//       size='lg'
-//       style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-//     />
-//     </NavItem>
-//     <NavItem eventKey={3}
-//       href="https://twitter.com/tPhilosophia"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//       >
-//     <FontAwesome
-//       className='nav-social-button'
-//       name='twitter'
-//       size='lg'
-//       style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-//     />
-//     </NavItem>
-//   </Nav>
-// </Navbar.Collapse>

@@ -1,3 +1,4 @@
+
 .resource-header h5 {
   color: black;
   margin: 0;
@@ -46,13 +47,22 @@ width: 280px;
 }
 
 @media only screen and (max-width: 600px) {
+  .views-container {
+    font-size: 12px;
+  }
+  ol.resources {
+    padding: 0;
+  }
   .resource-body {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
   }
+  .resource-header {
+      font-size: 12px;
+  }
   .resource-text {
-    width: 50%;
+    width: 100%;
     margin:0;
     /* justify-content: center; */
   }
