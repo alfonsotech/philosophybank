@@ -100,27 +100,21 @@ class App extends Component {
     })
   }
 
-  handleFormSubmit = (url) => {
+  handleUrlSubmit = (url) => {
     axios.post('/api/resources', { url: url, upvotes: 1, views: 0})
     .then( data => {
         console.log('form submitted, the following resource was added:', data)
-        this.setState({
-            url: ''
-        })
-          // history.push('/')
+        // history.push('/')
       });
   }
 
-  // filterResources = () => {
-  //
-  // }
+
 
   render() {
-    console.log('this.state.search', this.state.search)
     return (
       <div className="App">
         <Header
-          handleFormSubmit={(url) => this.handleFormSubmit(url)}
+          handleUrlSubmit={(url) => this.handleUrlSubmit(url)}
 
           />
         <Resources

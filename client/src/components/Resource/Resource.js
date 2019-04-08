@@ -85,7 +85,7 @@ class Resource extends Component {
             <div className="resource-body">
             <div className="resource-media">
               {!this.props.media ? <span></span> : this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' || this.state.mediaType === "vimeo.com" || this.state.mediaType === "player.vimeo.com" ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.props.media} alt={this.props.title} />}
-              
+
             </div>
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.props.url} target="_blank">
@@ -93,8 +93,7 @@ class Resource extends Component {
               </h2>
               <p>{this.props.description}</p>
               <small><p><a href={this.props.url} target="_blank">{this.props.mediaType}</a></p></small>
-
-            <SocialButtons resource={this.props}/>
+             <SocialButtons resource={this.props}/>
             </div>
         </div>
       </div>
