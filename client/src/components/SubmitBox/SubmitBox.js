@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 export default class SubmitBox extends Component {
 
   state = {
-      url: ''
+      url: '',
+      count: 0,
+      canSubmit: true
     }
 
     onChange = event => {
@@ -14,9 +16,9 @@ export default class SubmitBox extends Component {
     }
 
   render() {
-    console.log('this.props', this.props);
     return (
-      <form onSubmit={(url) => this.props.handleUrlSubmit(this.state.url)}>
+    
+      <form onSubmit={(event, url) => this.props.handleUrlSubmit(event, this.state.url)}>
         <input
           className="form-control"
           type="text"
@@ -26,7 +28,7 @@ export default class SubmitBox extends Component {
           onChange={this.onChange}
           required
         />
-        <button type="submit">Submit</button>
+        <button disabled={!this.state.canSubmit} type="submit">Submit</button>
       </form>
     )
   }

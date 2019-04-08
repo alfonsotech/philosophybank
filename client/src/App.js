@@ -100,7 +100,8 @@ class App extends Component {
     })
   }
 
-  handleUrlSubmit = (url) => {
+  handleUrlSubmit = (event, url) => {
+    event.preventDefault()
     axios.post('/api/resources', { url: url, upvotes: 1, views: 0})
     .then( data => {
         console.log('form submitted, the following resource was added:', data)
@@ -114,7 +115,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header
-          handleUrlSubmit={(url) => this.handleUrlSubmit(url)}
+          handleUrlSubmit={(event, url) => this.handleUrlSubmit(event, url)}
 
           />
         <Resources

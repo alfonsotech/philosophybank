@@ -11,7 +11,7 @@ class Header extends Component {
             <a href="/"><h1>Philosophy Bank <small><small>(beta)</small></small></h1></a><small><small>Crowdsourced & Upv♥ted By You</small></small>
           </div>
           <div>
-            <SubmitBox handleUrlSubmit={(url) => this.props.handleUrlSubmit(url)} />
+            <SubmitBox handleUrlSubmit={(event, url) => this.props.handleUrlSubmit(event, url)} />
           </div>
         </div>
 

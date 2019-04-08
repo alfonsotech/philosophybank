@@ -9,7 +9,6 @@ class Resource extends Component {
   state = {
     upvotes: '',
     views: ''
-
   }
   // constructor(props) {
   //   super(props)
@@ -62,7 +61,7 @@ class Resource extends Component {
   }
 
   render() {
-    // console.log('this.props', this.props);
+    console.log('this.props', this.props);
     return (
       <div className="Resource" id={this.props._id}>
         <div className="resource-header">
@@ -84,8 +83,10 @@ class Resource extends Component {
             </div>
             <div className="resource-body">
             <div className="resource-media">
-              {!this.props.media ? <span></span> : this.state.mediaType === 'www.youtube.com' || this.state.mediaType  === 'www.youtube-nocookie.com' || this.state.mediaType === "vimeo.com" || this.state.mediaType === "player.vimeo.com" ? <iframe src={this.state.url} title={this.state.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <img className="resource-img" src={this.props.media} alt={this.props.title} />}
-
+              {!this.props.media ? <span></span> : <img className="resource-img" src={this.props.media} alt={this.props.title} />}
+            </div>
+            <div className="resource-media">
+              {this.props.mediaType === 'www.youtube.com' || this.props.mediaType  === 'www.youtube-nocookie.com' || this.props.mediaType === "vimeo.com" || this.props.mediaType === "player.vimeo.com" ? <iframe src={this.props.url} title={this.props.title} width="280" height="157" target="_parent" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> : <span></span> }
             </div>
             <div className="resource-text">
               <h2 onClick={this.handleUpViews}><a href={this.props.url} target="_blank">
