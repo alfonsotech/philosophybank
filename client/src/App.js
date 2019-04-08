@@ -101,7 +101,7 @@ class App extends Component {
   }
 
   handleUrlSubmit = (event, url) => {
-    event.preventDefault()
+    // event.preventDefault()
     axios.post('/api/resources', { url: url, upvotes: 1, views: 0})
     .then( data => {
         console.log('form submitted, the following resource was added:', data)
