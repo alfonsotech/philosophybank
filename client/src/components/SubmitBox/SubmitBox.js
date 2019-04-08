@@ -17,14 +17,14 @@ export default class SubmitBox extends Component {
 
   render() {
     return (
-    
+
       <form onSubmit={(event, url) => this.props.handleUrlSubmit(event, this.state.url)}>
         <input
           className="form-control"
           type="text"
           value={this.state.url}
           name="url"
-          placeholder='Paste In URL'
+          placeholder="Paste In Resource URL"
           onChange={this.onChange}
           required
         />

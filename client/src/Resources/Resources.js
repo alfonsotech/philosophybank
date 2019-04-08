@@ -22,7 +22,7 @@ class Resources extends Component {
   }
 
   render() {
-    
+
     let filteredResources = this.props.resources.filter(
       resource => {
 
@@ -74,7 +74,7 @@ class Resources extends Component {
       return (
         <div className="Resources">
         <div className="search-box">
-          <input  type="text" placeholder="Search Resources"
+          <input  type="text" placeholder="Enter Search Term(s)"
             value={this.state.search}
             onChange={this.updateSearch}
             ></input>
