@@ -61,12 +61,10 @@ class Resource extends Component {
   }
 
   render() {
-    console.log('this.props', this.props);
     return (
       <div className="Resource" id={this.props._id}>
         <div className="resource-header">
             <p className={this.props.category}>
-            <span>Rank#:{this.props.index + 1}</span>
             <span onClick={this.handleUpvote}>
               <FontAwesome
                 className='heart'
