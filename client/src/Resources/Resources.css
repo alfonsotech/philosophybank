@@ -55,6 +55,9 @@
 .resource-img {
   width: 150px;
 }
+.loading {
+  text-align: center;
+}
 
 @media only screen and (max-width: 600px) {
   .Resources h2 {

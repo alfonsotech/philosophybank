@@ -123,6 +123,7 @@ class App extends Component {
           handleSearch={(search) => this.handleSearch(search)}
           changeView={(changeView) => this.changeView(changeView)}
           search={this.state.search}
+          loading={this.state.loading}
         />
         <Footer />
       </div>

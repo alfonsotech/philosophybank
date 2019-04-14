@@ -25,7 +25,7 @@ class SocialButtons extends Component {
          <TwitterShareButton
            url={this.props.resource.url}
            title={this.props.resource.title}
-           via="tPhilosophia"
+           via="tPhilosophia & PhilosophyBank.heroku.com"
            >
            <TwitterIcon
              size={24}
@@ -90,7 +90,7 @@ class SocialButtons extends Component {
             round />
         </RedditShareButton>
       </div>
-      
+
       <div className="share-button">
         <EmailShareButton
           url={this.props.resource.url}

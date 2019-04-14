@@ -22,7 +22,7 @@ class Resources extends Component {
   }
 
   render() {
-
+    console.log('this.props.loading', this.props.loading);
     let filteredResources = this.props.resources.filter(
       resource => {
 
@@ -69,7 +69,23 @@ class Resources extends Component {
     );
 
     if(this.props.loading) {
-      return <div  className="Resources">Loading...</div>
+      return (
+        <div className="Resources">
+        <div className="search-box">
+          <input  type="text" placeholder="Enter Search Term(s)"
+            value={this.state.search}
+            onChange={this.updateSearch}
+            ></input>
+          </div>
+          <div className="views-container">
+            <button onClick={() => this.props.changeView('trendingResources')}  className='header-button'>Trending Resources</button>
+            <span>|</span>
+            <button onClick={() => this.props.changeView('newResources')} className='header-button'>New Resources</button>
+          </div>
+          <h2 className="loading">Loading...</h2>
+      </div>
+
+      )
     } else {
       return (
         <div className="Resources">
