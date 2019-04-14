@@ -25,7 +25,7 @@ class SocialButtons extends Component {
          <TwitterShareButton
            url={this.props.resource.url}
            title={this.props.resource.title}
-           via="tPhilosophia & PhilosophyBank.heroku.com"
+           via="tPhilosophia & https://philosophybank.herokuapp.com"
            >
            <TwitterIcon
              size={24}
