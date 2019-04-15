@@ -1,5 +1,7 @@
 const db = require("../models")
 const linkPreview = require("link-preview")
+const Nightmare = require('nightmare')
+const nightmare = Nightmare({ show: true })
 
 module.exports = {
   findAll: function(req, res) {
@@ -70,15 +72,31 @@ module.exports = {
   create: function(req, res) {
     linkPreview.parse(req.body.url).then(function(data) {
       console.log('data>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', data);
-      console.log('data.imgs.length', data.imgs.length);
+
       let mediaImage = '';
 
-      if(data.imgs.length == 0 || data.imgs.length === null) {
-          mediaImage = 'https://via.placeholder.com/300/FFFFFF/000000/?text=No+Image+Available';
-      }
       if(data.host === 'epochemagazine.org' || 'www.publicbooks.org') {
           console.log('epoch mag', data.host, data.imgs[2]);
           mediaImage = data.imgs[2];
+      } else if(data.host === 'soundcloud.com') {
+
+        nightmare
+          .goto(data.url)
+          .evaluate(() => {
+              let img = document.querySelector('.image__full'),
+            style = img.currentStyle || window.getComputedStyle(img, false),
+            bi = style.backgroundImage.slice(4, -1).replace(/"/g, "");
+            mediaImage = bi
+            console.log('mediaImage', mediaImage);
+            }
+
+         )
+          .end()
+          .then(console.log)
+          .catch(error => {
+            console.error('Search failed:', error)
+          })
+
       } else if(data.host === 'medium.com') {
           console.log('medium host', data.host, data.imgs[4]);
           mediaImage = data.imgs[4];
@@ -99,7 +117,7 @@ module.exports = {
       upvotes: req.body.upvotes,
       views: req.body.views,
       notes: req.body.notes,
-      media:   mediaImage,
+      media: mediaImage,
       mediaType: data.host,
       institution: req.body.institution,
       categories: req.body.categories,

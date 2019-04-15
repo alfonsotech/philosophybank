@@ -22,7 +22,6 @@ class Resources extends Component {
   }
 
   render() {
-    console.log('this.props.loading', this.props.loading);
     let filteredResources = this.props.resources.filter(
       resource => {
 

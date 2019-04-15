@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
 import axios from "axios"
+import ShowMoreText from 'react-show-more-text';
 import SocialButtons from '../SocialButtons'
 import './Resource.css'
 
@@ -60,7 +61,15 @@ class Resource extends Component {
       // this.props.history.push('/')
   }
 
+  executeOnClick(isExpanded) {
+        console.log(isExpanded);
+    }
+
   render() {
+
+
+
+
     return (
       <div className="Resource" id={this.props._id}>
         <div className="resource-header">
@@ -90,7 +99,15 @@ class Resource extends Component {
               <h2 onClick={this.handleUpViews}><a href={this.props.url} target="_blank">
                 {this.props.title}</a>
               </h2>
-              <p>{this.props.description}</p>
+              <ShowMoreText
+                lines={5}
+                more='Show more'
+                less='Show less'
+                anchorClass=''
+                onClick={this.executeOnClick}
+                >
+                {this.props.description}
+              </ShowMoreText>
               <small><p><a href={this.props.url} target="_blank">{this.props.mediaType}</a></p></small>
              <SocialButtons resource={this.props}/>
             </div>
